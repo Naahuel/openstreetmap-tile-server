@@ -138,7 +138,7 @@ RUN sed -i 's/renderaccount/renderer/g' /usr/local/etc/renderd.conf \
  && sed -i 's/hot/tile/g' /usr/local/etc/renderd.conf
 
 # Configure retina tiles
-RUN echo -e "[map_retina]\nURI=/tile@2x/\nTILEDIR=/var/lib/mod_tile\nXML=/home/renderer/src/openstreetmap-carto/mapnik.xml\nHOST=localhost\nMAXZOOM=19\nSCALE=2.0\nTILESIZE=512\n" >> renderd.conf
+RUN echo -e "[map_retina]\nURI=/tile@2x/\nTILEDIR=/var/lib/mod_tile\nXML=/home/renderer/src/openstreetmap-carto/mapnik.xml\nHOST=localhost\nMAXZOOM=19\nSCALE=2.0\nTILESIZE=512\n" >> /usr/local/etc/renderd.conf
 
 
 # Configure Apache
