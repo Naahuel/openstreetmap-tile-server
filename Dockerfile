@@ -129,7 +129,7 @@ RUN mkdir -p /home/renderer/src \
  && rm -rf .git \
  && npm install -g carto@0.18.2 \
  && carto project.mml > mapnik.xml \
- && scripts/get-external-data.py \
+ && scripts/get-shapefiles.py \
  && rm /home/renderer/src/openstreetmap-carto/data/*.zip
 
 # Configure renderd
