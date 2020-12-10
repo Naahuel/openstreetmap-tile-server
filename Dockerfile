@@ -129,7 +129,9 @@ RUN mkdir -p /home/renderer/src \
  && rm -rf .git \
  && npm install -g carto@0.18.2 \
  && carto project.mml > mapnik.xml \
- && scripts/get-shapefiles.py \
+ && sed 's,http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_boundary_lines_land.zip,https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_boundary_lines_land.zip,g' scripts/get-shapefiles.py > scripts/get-shapefiles2.py \
+ && chmod +x scripts/get-shapefiles2.py \
+&& scripts/get-shapefiles2.py \
  && rm /home/renderer/src/openstreetmap-carto/data/*.zip
 
 # Configure renderd
