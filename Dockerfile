@@ -124,8 +124,9 @@ RUN mkdir -p /home/renderer/src \
 # Configure stylesheet
 RUN mkdir -p /home/renderer/src \
  && cd /home/renderer/src \
- && git clone --single-branch --branch v5.2.0 https://github.com/gravitystorm/openstreetmap-carto.git --depth 1 \
+ && git clone https://github.com/gravitystorm/openstreetmap-carto.git \
  && cd openstreetmap-carto \
+ && git checkout b10aef3866 \
  && rm -rf .git \
  && npm install -g carto@1.2.0 \
  && carto project.mml > mapnik.xml \
